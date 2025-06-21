@@ -23,6 +23,7 @@ body::-webkit-scrollbar {
 /* For Internet Explorer and older versions of Edge */
 body {
   -ms-overflow-style: none; 
+	min-width: 320px;
 }
 
 * {
@@ -69,6 +70,29 @@ h2 {
 	box-shadow: 0 4px 12px black;
 }
 
+.scroll-item {
+	/* CSS Animation Properties */
+	animation-name: scale-on-view;
+	animation-duration: 1ms; /* Dummy duration, actual progress controlled by timeline */
+	animation-fill-mode: both; /* Keep the first/last frame styles */
+	animation-timing-function: linear; /* Smooth scaling */
+
+	/* Link to the view timeline */
+	animation-timeline: view(); /* This makes the animation respond to the item's visibility */
+	animation-range: entry 50% cover 70%; /* Start scaling when 0% of item enters, fully scaled when 50% covered */
+}
+
+@keyframes scale-on-view {
+            from {
+                transform: scale(0.8); /* Start smaller */
+                opacity: 0.5;
+            }
+            to {
+                transform: scale(1.0); /* Get bigger */
+                opacity: 1;
+            }
+					}
+
 /* --- HEADER STYLING --- */
 .header {
 	width: 100%;
@@ -107,21 +131,62 @@ section {
 }
 
 h2 {
-	font-size: 2rem;
+	font-size: 3.3rem;
 	margin-bottom: 1.5rem;
 	text-align: center;
 	color: var(--text-light);
 }
 
-/* About */
-.about-content {
-	max-width: 500px;
+/* intro */
+.intro-content {
+	max-width: 80vw;
 	margin: 0 auto;
 	text-align: center;
+	font-size: 1.2rem;
 }
 
-#about {
+#intro {
   padding-top: 5rem; /* You can adjust this value as needed */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.scroll-down-container {
+  position: absolute;
+  bottom: 7rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-down-container a span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  transform: rotate(-45deg);
+  animation: sdb 2s infinite;
+  box-sizing: border-box;
+}
+
+@keyframes sdb {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
 }
 
 /* Work */
@@ -154,12 +219,20 @@ h2 {
 
 .project-image {
 	height: 200px;
-	background-color: #eee;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	color: #999;
 	border-radius: 10px;
+	object-fit: fit;
+	overflow: contain;
+}
+
+.project-image img {
+    width: 100%; /* Make the image take up 100% of the parent's width */
+    height: 100%; /* Make the image take up 100% of the parent's height */
+    object-fit: contain; /* Scales and crops the image to fill the box */
+    display: block;
 }
 
 .project-info {
@@ -190,19 +263,16 @@ h2 {
 }
 
 /* ---EXPERIENCE--- */
-
 .experience-item {
+	margin-top: 5rem;
 	display: flex;
 	flex-direction:row;
 	gap: 20px;
 	justify-content: center;
 }
 
-.company-side {
-	
-}
-
 .info-side{ 
+	max-width: 30rem;
 }
 
 .split {
