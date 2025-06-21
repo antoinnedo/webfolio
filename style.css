@@ -3,28 +3,28 @@
 	--background-grey: #27272e;
 	--dark-grey: #333333;
 	--purple-dark: #5033B0;
-	--purple-light: #C3CBF8;
-	--grey-light: #DFE1E6;
+	--purple-light: #909194;
+	--text-light: #ffffff;
 	--yellow-active: #e9ec34;
 	--card-shadow: #a7a7a7;
 }
 
 html {
 	scroll-behavior: smooth;
-	scroll-padding-top: 100px; 
+	scroll-padding-top: 7rem;
 	scrollbar-width: none;
-	font-size: 62.5%;
 }
 
-/* For WebKit-based browsers (Chrome, Safari, Edge) */
 body::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 
-/* For Internet Explorer and older versions of Edge */
 body {
-  -ms-overflow-style: none; 
+	-ms-overflow-style: none;
 	min-width: 320px;
+	line-height: 1.6;
+	color: var(--text-light);
+	background-color: var(--background-grey);
 }
 
 * {
@@ -34,300 +34,451 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
-main {
-	padding-bottom: 3rem;
-}
-
-body {
-	line-height: 1.6;
-	color: var(--grey-light);
-	background-color: var(--background-grey); 
-}
-
+/* Typography */
 h2 {
-	color: var(white);
+	font-size: 2.7rem;
+	text-align: center;
+	color: var(--text-light);
+	margin-bottom: 3rem;
+}
+
+h3 {
+	font-size: 2rem;
+}
+
+h4 {
+	font-size: 1.8rem;
+}
+
+p {
+	font-size: 1.4rem;
+}
+
+li {
+	font-size: 1.4rem;
+}
+
+/* Layout and Core Components */
+.content-wrapper {
+	width: 100%;
+	margin: 0 auto;
 }
 
 .wallpaper {
 	position: fixed;
 	z-index: -1;
 	object-fit: cover;
-	background-position: center;
+	height: 100%;
+	width: 100%;
 }
 
 .card {
-	border: 5px solid white88;
 	overflow: hidden;
 	transition: transform 0.3s ease;
-
-	background-color: #ffffff20;
-	border-radius: 30px;
-	padding: 25px;
-	
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 3rem;
+	padding: 2.5rem;
 	display: flex;
 	flex-direction: column;
-	backdrop-filter: blur(10px);
+	backdrop-filter: blur(1rem);
 	z-index: 1;
-	box-shadow: 0 4px 12px black;
+	box-shadow: 0 0.4rem 1.2rem black;
 }
 
-.scroll-item {
-	/* CSS Animation Properties */
-	animation-name: scale-on-view;
-	animation-duration: 1ms; /* Dummy duration, actual progress controlled by timeline */
-	animation-fill-mode: both; /* Keep the first/last frame styles */
-	animation-timing-function: linear; /* Smooth scaling */
-
-	/* Link to the view timeline */
-	animation-timeline: view(); /* This makes the animation respond to the item's visibility */
-	animation-range: entry 50% cover 70%; /* Start scaling when 0% of item enters, fully scaled when 50% covered */
+.card:hover {
+	transform: translateY(-0.5rem);
 }
 
-@keyframes scale-on-view {
-            from {
-                transform: scale(0.8); /* Start smaller */
-                opacity: 0.5;
-            }
-            to {
-                transform: scale(1.0); /* Get bigger */
-                opacity: 1;
-            }
-					}
+.animate-on-scroll {
+	will-change: transform, opacity;
+	opacity: 0;
+	transform: scale(0.9);
+	transition: all 0.6s ease-out;
+}
 
-/* --- HEADER STYLING --- */
-.header {
+.animate-on-scroll.is-visible {
+	opacity: 1;
+	transform: scale(1);
+}
+
+section {
+	padding: 3rem 1rem;
+	max-width: 100rem;
+	margin: 0 auto;
+}
+
+footer {
+	padding-top: 7rem;
+	color: var(--text-light);
+	text-align: center;
 	width: 100%;
-	
+}
 
-	/* color */
-	background: linear-gradient(to bottom, #ffffff20, transparent);
-	
-	/* align */
+/* Header */
+.header {
+	margin-top: 5rem;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	z-index: 5;
+}
+
+.hamburger-menu {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--grey-light);
+  font-size: 2.4rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.header-buttons {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;   
-	padding: 30px 20px;
-	position: fixed;
-	z-index: 2; /* Keeps header shadow above main content */
+	gap: 1.5rem;
+	justify-items: center;
 }
 
 .header-buttons a {
-	background-color: var(--primary-color);
+	display: flex;
+	flex-direction: row;	
 	color: var(--text-light);
 	border: none;
 	text-decoration: none;
-	border-radius: 20px;
-	padding: 10px 25px;
+	border-radius: 2rem;
+	padding: 1rem 2.5rem;
 	font-size: 1.5rem;
 	font-weight: 700;
 	cursor: pointer;
 }
 
-/* Section styles */
-section {
-	padding: 3rem 1rem;
-	max-width: 1200px;
-	margin: 0 auto;
-}
-
-h2 {
-	font-size: 3.3rem;
-	margin-bottom: 1.5rem;
-	text-align: center;
-	color: var(--text-light);
-}
-
-/* intro */
-.intro-content {
-	max-width: 80vw;
-	margin: 0 auto;
-	text-align: center;
-	font-size: 1.2rem;
-}
-
+/* Intro Section & Scroll Animation */
 #intro {
-  padding-top: 5rem; /* You can adjust this value as needed */
+	padding-top: 5rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+	gap: 2rem;
+}
+
+.intro-content {
+	max-width: 80vw;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 1.4rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.6rem;
 }
 
 .scroll-down-container {
-  position: absolute;
-  bottom: 7rem;
-  left: 50%;
-  transform: translateX(-50%);
+	position: absolute;
+	bottom: 7rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 3;
 }
 
 .scroll-down-container a span {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 24px;
-  height: 24px;
-  margin-left: -12px;
-  border-left: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  transform: rotate(-45deg);
-  animation: sdb 2s infinite;
-  box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 2.4rem;
+	height: 2.4rem;
+	margin-left: -1.2rem;
+	border-left: 0.1rem solid #fff;
+	border-bottom: 0.1rem solid #fff;
+	transform: rotate(-45deg);
+	animation: sdb 2s infinite;
+	box-sizing: border-box;
 }
 
 @keyframes sdb {
-  0% {
-    transform: rotate(-45deg) translate(0, 0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(-45deg) translate(-20px, 20px);
-    opacity: 0;
-  }
+	0% {
+		transform: rotate(-45deg) translate(0, 0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		transform: rotate(-45deg) translate(-2rem, 2rem);
+		opacity: 0;
+	}
 }
 
-/* Work */
-.projects-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	gap: 2rem;
-	margin-top: 2rem; 
-}
-
-.project-card {
-	border: 5px solid white88;
-	overflow: hidden;
-	transition: transform 0.3s ease;
-
-	background-color: #ffffff20;
-	border-radius: 30px;
-	padding: 25px;
-	
+/* Content Sections (Skills, Projects, Experience, Contact) */
+#education,
+#experience {
 	display: flex;
 	flex-direction: column;
-	backdrop-filter: blur(10px);
-	z-index: 1;
-	box-shadow: 0 4px 12px black;
+	align-items: center;
+	gap: 5rem;
 }
 
-.project-card:hover {
-	transform: translateY(-5px);
+.education-logo img {
+	margin-top: 1.5rem;
+  width: 80px;  /* You can adjust this value to your desired size */
+  height: auto; /* This automatically adjusts the height to keep the correct proportions */
+}
+
+.education-header {
+  display: flex;
+  align-items: flex-start; /* Aligns items to the top */
+  gap: 2rem;
+}	
+
+.education-info-block .company h3 {
+  margin-top: 0;
+}
+
+/* This rule arranges the text content (school name and GPA) */
+.education-info-block {
+  display: flex;
+  justify-content: space-between; /* Pushes the school name and GPA to opposite ends */
+  align-items: flex-start;
+  width: 100%; /* Ensures the text block takes up the remaining space */
+}
+
+.skills {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.projects-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+	gap: 2rem;
 }
 
 .project-image {
-	height: 200px;
+	height: 20rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	color: #999;
-	border-radius: 10px;
-	object-fit: fit;
-	overflow: contain;
+	border-radius: 1rem;
+	object-fit: contain;
+	overflow: hidden;
+	margin-bottom: 1.5rem;
 }
 
 .project-image img {
-    width: 100%; /* Make the image take up 100% of the parent's width */
-    height: 100%; /* Make the image take up 100% of the parent's height */
-    object-fit: contain; /* Scales and crops the image to fill the box */
-    display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	display: block;
 }
 
 .project-info {
-	padding: 1.5rem;
+	padding: 1.5rem 0;
 }
 
 .project-info h3 {
-	margin-bottom: 0.5rem;
-	color: #ffffff;
+	margin-bottom: 1rem;
+	color: var(--text-light);
 }
 
-.material-symbols-outlined {
-	color: var(--grey-light);
-	
-}
-
-.a {
-	text-decoration: none;
-	color: var(--grey-light);
+.lower-card {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: auto;
+	padding-top: 1.5rem;
 }
 
 .card-icons {
-	align-self: flex-end;
-	margin-top: 0px;
 	display: flex;
-	gap: 15px;
-	
+	justify-content: flex-end;
+	gap: 1.5rem;
 }
 
-/* ---EXPERIENCE--- */
 .experience-item {
-	margin-top: 5rem;
-	display: flex;
-	flex-direction:row;
-	gap: 20px;
-	justify-content: center;
-}
-
-.info-side{ 
-	max-width: 30rem;
-}
-
-.split {
-	display: grid;
-}
-
-/* Contact section */
-
-.contact-content {
-	max-width: 600px;
-	margin: 0 auto;
-	gap: 60px;
-
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-}
-
-.contact-body {
+	max-width: 85rem;
 	display: flex;
 	flex-direction: column;
-	gap: 1.5rem; /* Space between the text and the photo */
+	gap: 2rem;
+	justify-content: center;
+	width: 100%;
 }
 
+.item-logo {
+  width: 70px;  /* Default logo size - adjust as needed */
+  height: auto; /* Maintains aspect ratio */
+  flex-shrink: 0;
+}
+
+/* A reusable container for the header of any card-like item */
+.item-header {
+  display: flex;
+  align-items: flex-start; /* Aligns items to the top for consistency */
+  gap: 2rem;               /* Adjust space between logo and text */
+  margin-bottom: 1.5rem;
+}
+
+/* A reusable container for the text block (company, job title, etc.) */
+.item-info-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* This is key for alignment: removes default space above the heading */
+.item-info-block .company h3 {
+  margin-top: 0;
+}
+#rakuna_logo {
+	margin-top: 1rem;
+  width: 60px; /* Or any other size you prefer */
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.company {
+	text-align: left;
+}
+
+.job,
+.info-dates {
+	text-align: right;
+}
+
+.experience-header {
+	gap: 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.experience-details ul {
+	list-style-type: disc;
+	padding-left: 2rem;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+#contact {
+	padding-top: 7rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 80vh;
+	gap: 5rem;
+}
+
+.contact-content {
+	max-width: 60rem;
+	margin: 0 auto;
+	gap: 6rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.4rem;
+}
 
 .contact-photo {
-	width: 200px;
-	height: 200px;
-	background-color: #ccc; 
-	border-radius: 50%; 
+	width: 20rem;
+	height: 20rem;
+	background-color: #ccc;
+	border-radius: 50%;
 	object-fit: cover;
 	display: flex;
 	align-items: center;
 }
 
+.contact-body {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+}
+
 .contact-line {
 	display: flex;
 	align-items: center;
-	gap: 15px; 
-	text-decoration: none; /* Ensures no underline */
-	color: #fff; /* White text */
-	
-	width: 25px;
-	text-align: center;
-	color: #fff; /* White icon */
-	font-size: 1rem;
+	gap: 1.5rem;
+	text-decoration: none;
+	color: var(--text-light);
 }
 
-/* Footer */
-footer {
-	background-color: #333;
-	color: white;
+.contact-line i {
+	font-size: 2.4rem;
+	width: 2.5rem;
 	text-align: center;
-	padding: 1.5rem;
-	background: linear-gradient(to top, #ffffff20, transparent);
+}
+
+.material-symbols-outlined {
+	color: var(--text-light);
+	transition: all 0.3s ease;
+	font-size: 2.4rem;
+}
+
+.material-symbols-outlined:hover {
+	transform: translateY(-0.2rem);
+}
+
+/* Tech Tags */
+.tech-stack-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-items: center;
+	padding-left: 1rem;
+}
+
+.tech-tag {
+	background-color: rgba(255, 255, 255, 0.22);
+	backdrop-filter: blur(0.5rem);
+	box-shadow: 0 0.4rem 1.2rem #00000050;
+	border-radius: 2rem;
+	padding: 0.5rem 1rem;
+	display: inline-flex;
+	align-items: center;
+	font-size: 1.2rem;
+	color: var(--text-light);
+	text-decoration: none;
+}
+
+/* Media Queries */
+@media (min-width: 767px) {
+	.contact-content {
+		flex-direction: column;
+		text-align: center;
+	}
+	.experience-header,
+	.job {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 1rem;
+	}
+
+	.experience-header .job {
+		align-items: center;
+	}
+
+	.info-dates {
+		text-align: center;
+	}
+
+	.header-buttons{
+    /* This overrides the default and arranges items side-by-side. */
+    flex-direction: row;
+  }
+
+  .header-buttons .tech-tag{
+    /* This tells each item to grow and take up an equal amount of space. */
+    /* This is what creates the 3 columns. */
+    flex: 1;
+  }
 }

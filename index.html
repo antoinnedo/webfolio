@@ -11,179 +11,300 @@
 </head>
 <body>
 	<div class="container">
-		<img class="wallpaper" src="2nd-background.jpeg" alt="earthy">
+		<img class="wallpaper" src="images/2nd-background.jpeg" alt="earthy">
 		<header class="header">
-			<div class="header-buttons">
-				<a href="#about">About</a>
-				<a href="#work">Work</a>
-				<a href="#experience">Experience</a>
-				<a href="#contact">Contact</a>
+			<div class="header-buttons" id="nav-links">
+				<a href="#intro" class="desktop-only tech-tag">Welcome</a>
+				<a href="#intro" class="mobile-only tech-tag">Home</a>			
+				<a href="#education" class="tech-tag">Education</a>
+				<a href="#skills" class="tech-tag">Skills</a>
+				<a href="#work" class="tech-tag">Work</a>
+				<a href="#experience" class="tech-tag">Experience</a>
+				<a href="#contact" class="tech-tag">Contact</a>
 			</div>
 		</header>
     
-		<main>
+		<div class="content-wrapper">
+			<main>
 				<!-- Intro Section -->
-				<section id="intro">
+				<section id="intro" class="animate-on-scroll">
 					<h2>Hi, I'm <strong> Anthony Do</strong>.</h2>
 					<div class="intro-content">
-						<p>
-							I'm an upcoming <strong>CS junior</strong> at <strong>Texas Christian University</strong>.
-						</p>
-						<p>
-							I like coding, chess, bouldering, running and matcha latte 🍵.  
-						</p>
+						<p>I'm an upcoming <strong>CS junior</strong> at <strong>Texas Christian University</strong>.</p>
+						<p>I like coding, chess, bouldering, running and matcha latte 🍵.</p>
 					</div>
+					<a href= "#" class="tech-tag"><h3>My Resumé</h3></a>
 					<div class="scroll-down-container">
-						<a href="#some-other-section"><span></span></a>
+						<a href="#education"><span></span></a>
 					</div>
 				</section>
 				
-
-				<!-- skills section -->
-				<section id="skills">
-
-				</section>
-				
-				<!-- Work Section -->
-				<section id="work">
-					<h2>Projects</h2>
-					<div class="projects-grid scroll-item">
-						<!-- Project 1 -->
-						<div class="project-card">
-							<div class="project-image"><img src="Ping Pong.png" alt="ping_pong_demo"></div>
-							<div class="project-info">
-								<h3>Ping Pong</h3>
-								<p>Short description of the project. Just a couple sentences will do.</p>
-							</div>
-							<div class="card-icons">
-								<a href="#"><span class="material-symbols-outlined">visibility</span></a>
-								<a href="https://github.com/antoinnedo/Pong-Java"><span class="material-symbols-outlined">share</span></a>
-							</div>		
-						</div>
-							
-						<!-- Project 2 -->
-						<div class="project-card">
-							<div class="project-image"><img src="2048.png" alt="2048_demo"></div>
-							<div class="project-info">
-								<h3>2048</h3>
-								<p>Short description of the project. Just a couple sentences will do.</p>
-							</div>
-							<div class="card-icons">
-								<a href="https://antoinnedo.github.io/2048/"><span class="material-symbols-outlined">visibility</span></a>
-								<a href="https://github.com/antoinnedo/2048"><span class="material-symbols-outlined">share</span></a>
+				<!-- Education -->
+				<section id="education" class="animate-on-scroll">
+					<h2>Education</h2>
+					<div class="experience-item card">
+						<div class="education-header">
+							<div class="education-logo"><img src="images/tcu_logo.png" alt="TCU logo"></div>
+							<div class="education-info-block">
+								<div class="company">
+								<h3>Texas Christian University</h3>
+								<p class="company-location">Fort Worth, TX</p>
+								</div>
+								<div class="job">
+									<h4>Dean’s List | GPA: 3.71</h4>
+									<p class="info-dates">August 2023 – May 2027</p>
+								</div>
 							</div>
 						</div>
-							
-						<!-- Project 3 -->
-						<div class="project-card">
-							<div class="project-image"><img src="TicTacToe.png" alt="TicTacToe_demo"></div>
-							<div class="project-info">
-								<h3>Tic Tac Toe</h3>
-								<p>Short description of the project. Just a couple sentences will do.</p>
-							</div>
-							<div class="card-icons">
-								<a href="https://antoinnedo.github.io/TicTacToe-JS/"><span class="material-symbols-outlined">visibility</span></a>
-								<a href="https://github.com/antoinnedo/TicTacToe-JS"><span class="material-symbols-outlined">share</span></a>
-							</div>
-						</div>
-							
-						<!-- Project 4 -->
-						<div class="project-card">
-							<div class="project-image"><img src="Chess.png" alt=""></div>
-							<div class="project-info">
-								<h3>Chess Game</h3>
-								<p>Short description of the project. Just a couple sentences will do.</p>
-							</div>
-							<div class="card-icons">
-								<a href="#"><span class="material-symbols-outlined">visibility</span></a>
-								<a href="#"><span class="material-symbols-outlined">share</span></a>
-							</div>
-						</div>
-							
-						<!-- Project 5 -->
-						<div class="project-card">
-							<div class="project-image"><img src="Connect4.png" alt=""></div>
-							<div class="project-info">
-								<h3>Connect Four</h3>
-								<p>Short description of the project. Just a couple sentences will do.</p>
-							</div>
-							<div class="card-icons">
-								<a href="#"><span class="material-symbols-outlined">visibility</span></a>
-								<a href="#"><span class="material-symbols-outlined">share</span></a>
-							</div>
-						</div>
-
-						<!-- Project 6 -->
-						<div class="project-card">
-							<div class="project-image"><img src="Hangman.png" alt=""></div>
-							<div class="project-info">
-								<h3>Hangman</h3>
-								<p>Short description of the project. Just a couple sentences will do.</p>
-							</div>
-							<div class="card-icons">
-								<a href="#"><span class="material-symbols-outlined">visibility</span></a>
-								<a href="#"><span class="material-symbols-outlined">share</span></a>
-							</div>
-						</div>
-				</section>
-				
-				<section id="experience">
-					<h2>Experience</h2>
-					<div class="experience-item scroll-item">
-						<div class="company-side card ">
-							<h3>Rakuna HR Solutions Inc.</h3>
-							<p class="company-location">San Francisco, CA</p>
-							<h4>Software Development intern</h4>
-							<p class="info-dates">June 2025 – November 2025</p>
-						</div>
-						<div class="info-side card">
-							
+						<div class="experience-details">
 							<ul class="info-duties">
-								<li>Being involved directly in the company's product development pipeline.</li>
-								<li>Deployed products that helps the company to reach 20% more productivity through code optimization.</li>
-								<li>Working in multiple languages such as Ruby, Rails, React, JavaScript, HTML, CSS, SQLite, PostgreSQL.</li>
+								<li>B.S. in Computer Science</li>
+								<li>Coursework: Data Structures and Algorithms, Object-Oriented 
+									Programming, Computer Architecture, Compiler, Web Technologies, 
+									Linux/Unix, Calculus, Discrete Math, Linear Algebra.</li>
 							</ul>
 						</div>
 					</div>
 				</section>
 
-				
-					
-				</section>
+				<!-- skills section -->
+				<section id="skills" class="animate-on-scroll">
+					<h2>Skills</h2>
+					<div class="skills">
+						<div class="tech-stack-container">
+							<h3>Languages:</h3> 
+							<div class="tech-tag">Ruby</div>
+							<div class="tech-tag">JavaScript</div>
+							<div class="tech-tag">HTML</div>
+							<div class="tech-tag">CSS</div>
+							<div class="tech-tag">Python</div>
+							<div class="tech-tag">Java</div>
+							<div class="tech-tag">C++</div>
+							<div class="tech-tag">C</div>
+							<div class="tech-tag">SQLite</div>
+							<div class="tech-tag">PostgreSQL</div>
+							<div class="tech-tag">TypeScript</div>
+							<div class="tech-tag">Scala</div>
+							<div class="tech-tag">Assembly</div>
+						</div>
 
-				<!-- Contact Section -->
-				<section id="contact" class="contact-section">
-					<h2>Contact</h2>
-					<div class="contact-content">
-
-						<div class="contact-photo"><img class="contact-photo" src="portrait.HEIC" alt="Anthony Do"></div>
 						
-						<div class="contact-body"> 
-
-							<p>Let's have a coffee chat!</p>
-						
-							<a href="https://www.linkedin.com/in/anthonydo2307/" class="contact-line">
-								<i class="fas fa-comment-dots"></i>
-								<span>/in/anthonydo2307</span>
-							</a>
-							
-							<a href="mailto:anthonydo2307@gmail.com" class="contact-line">
-								<i class="fas fa-envelope"></i>
-								<span>anthonydo2307@gmail.com</span>
-							</a>
-							
-							<a href="tel:555-555-5555" class="contact-line"> <i class="fas fa-phone"></i>
-								<span>682.306.1796</span>
-							</a>
-							
+						<div class="tech-stack-container">
+							<h3>Tech stacks:</h3>
+							<div class="tech-tag">Rails</div>
+							<div class="tech-tag">NodeJs</div>
+							<div class="tech-tag">ReactJS</div>
+							<div class="tech-tag">Angular</div>
+							<div class="tech-tag">Django</div>
 						</div>
 					</div>
 				</section>
-		</main>
-	
-	<footer>
-		<p>&copy; 2025 Anthony Do. All rights reserved.</p>
-	</footer>
-	</div>
+					
+					<!-- Work Section -->
+					<section id="work" class="animate-on-scroll">
+						<h2>Projects</h2>
+						<div class="projects-grid">
+							<!-- Project 1 -->
+							<div class="card">
+								<div class="project-image"><img src="gifs/PongDemo.gif" alt="ping_pong_demo"></div>
+								<div class="project-info">
+									<h3>Ping Pong</h3>
+									<p>A classic arcade game recreated in Java using the AWT and Swing libraries for the graphical interface. 
+										The project focuses on core game loop mechanics, collision detection, and user input handling.</p>
+								</div>
+								<div class="lower-card">
+									<div class="tech-stack-container">
+										<span class="tech-tag">Java</span>
+										<span class="tech-tag">AWT</span>
+										<span class="tech-tag">Swing</span>
+									</div>
+									<div class="card-icons">
+										<a href="https://github.com/antoinnedo/Pong-Java"><span class="material-symbols-outlined">visibility</span></a>
+									</div>	
+								</div>	
+							</div>
+								
+							<!-- Project 2 -->
+							<div class="card">
+								<div class="project-image"><img src="gifs/2048.gif" alt="2048_demo"></div>
+								<div class="project-info">
+									<h3>2048</h3>
+									<p>An implementation of the addictive number puzzle built with fundamental web technologies. 
+										JavaScript drives the core logic of tile merging and scoring, while HTML and CSS create the interactive grid.</p>
+								</div>
+								<div class="lower-card">
+									<div class="tech-stack-container">
+										<span class="tech-tag">JavaScript</span>
+										<span class="tech-tag">HTML</span>
+										<span class="tech-tag">CSS</span>
+									</div>
+									<div class="card-icons">
+										<a href="https://github.com/antoinnedo/2048/"><span class="material-symbols-outlined">visibility</span></a>
+									</div>
+								</div>	
+								
+							</div>
+								
+							<!-- Project 3 -->
+							<div class="card">
+								<div class="project-image"><img src="gifs/TicTacToeJS.gif" alt="TicTacToe_demo"></div>
+								<div class="project-info">
+									<h3>Tic Tac Toe</h3>
+									<p>A web-based version of the timeless strategy game. 
+										This project demonstrates state management, win-condition logic, and a clean, interactive user interface.</p>
+								</div>
+								<div class="lower-card">
+									<div class="tech-stack-container">
+										<span class="tech-tag">JavaScript</span>
+										<span class="tech-tag">HTML</span>
+										<span class="tech-tag">CSS</span>
+									</div>
+									<div class="card-icons">
+										<a href="https://github.com/antoinnedo/TicTacToe-JS/"><span class="material-symbols-outlined">visibility</span></a>
+									</div>
+								</div>
+							</div>
+								
+							<!-- Project 4 -->
+							<div class="card">
+								<div class="project-image"><img src="gifs/ChessGame.gif" alt=""></div>
+								<div class="project-info">
+									<h3>Chess Game</h3>
+									<p>A complete, text-based chess engine developed in Ruby. 
+										This project showcases complex problem-solving by implementing the unique movement rules for every piece 
+										and check/checkmate detection in a console environment.</p>
+								</div>
+								<div class="lower-card">
+									<div class="tech-stack-container">
+										<span class="tech-tag">Ruby</span>
+									</div>
+									<div class="card-icons">
+										<a href="https://github.com/antoinnedo/Chess-Ruby/"><span class="material-symbols-outlined">visibility</span></a>
+									</div>
+								</div>
+							</div>
+								
+							<!-- Project 5 -->
+							<div class="card">
+								<div class="project-image"><img src="gifs/Connect Four.gif" alt=""></div>
+								<div class="project-info">
+									<h3>Connect Four</h3>
+									<p>The classic two-player game of vertical strategy, built as a command-line application in Ruby. 
+										This program manages the game board, player turns, and win detection through logical grid manipulation.</p>
+								</div>
+								<div class="lower-card">
+									<div class="tech-stack-container">
+										<span class="tech-tag">Ruby</span>
+									</div>
+									<div class="card-icons">
+										<a href="https://github.com/antoinnedo/connect_four_ruby"><span class="material-symbols-outlined">visibility</span></a>
+									</div>
+								</div>
+							</div>
+
+							<!-- Project 6 -->
+							<div class="card">
+								<div class="project-image"><img src="gifs/Hangman.gif" alt=""></div>
+								<div class="project-info">
+									<h3>Hangman</h3>
+									<p> The iconic word-guessing game brought to life in the terminal with Ruby. 
+										This project handles user input, tracks guessed letters, and manages 
+										the game state through to its winning or losing conclusion.</p>
+								</div>
+								<div class="lower-card">
+									<div class="tech-stack-container">
+										<span class="tech-tag">Ruby</span>
+									</div>
+									<div class="card-icons">
+										<a href="https://github.com/antoinnedo/hangman"><span class="material-symbols-outlined">visibility</span></a>
+									</div>
+								</div>
+							</div>
+					</section>
+					
+					<section id="experience" class="animate-on-scroll">
+						<h2>Experience</h2>
+						<div class="experience-item card">
+							<div class="experience-header">
+								<img src="images/rakuna.png" alt="rakuna_logo" id="rakuna_logo" class="item-logo">
+								<div class="item-info-block">
+									<div class="company">
+										<h3>Rakuna HR Solutions Inc.</h3>
+										<p class="company-location">San Francisco, CA</p>
+									</div>
+									<div class="job">
+										<h4>Software Development Intern</h4>
+										<p class="info-dates">June 2025 – November 2025</p>
+									</div>
+								</div>
+							</div>
+							<div class="experience-details">
+								<ul class="info-duties">
+									<li>Involving directly in the company's product development pipeline.</li>
+									<li>Deploying products that helps the company to reach 20% more productivity through code optimization.</li>
+									<li>Working in multiple languages such as Ruby, Rails, React, JavaScript, HTML, CSS, SQLite, PostgreSQL.</li>
+								</ul>
+							</div>
+						</div>
+						<div class="experience-item card">
+							<div class="experience-header">
+								<div class="education-logo"><img src="images/tcu_logo.png" alt="TCU logo"></div>
+								<div class="item-info-block">
+									<div class="company">
+										<h3>Texas Christian University</h3>
+										<p class="company-location">Fort Worth, TX</p>
+									</div>
+									<div></div>
+									<div class="job">
+										<h4>STEM Tutor</h4>
+										<p class="info-dates">August 2024 – Present</p>
+									</div>
+								</div>
+							</div>
+							<div class="experience-details">
+								<ul class="info-duties">
+									<li>Tutored over 30 students in Computer Science, Math, and Physics courses, improving their grade by 1+ letter.</li>
+									<li>Worked with the academic manager to support students in overcoming academic and behavioral challenges, ensuring consistent performance.</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<!-- Contact Section -->
+					<section id="contact" class="contact-section animate-on-scroll">
+						<h2>Contact</h2>
+						<div class="contact-content">
+
+							<div class="contact-photo"><img class="contact-photo" src="portrait.HEIC" alt="Anthony Do"></div>
+							
+							<div class="contact-body"> 
+
+								<p>Let's have a coffee chat!</p>
+							
+								<a href="https://www.linkedin.com/in/anthonydo2307/" class="contact-line">
+									<i class="fas fa-comment-dots"></i>
+									<p>/in/anthonydo2307</p>
+								</a>
+								
+								<a href="mailto:anthonydo2307@gmail.com" class="contact-line">
+									<i class="fas fa-envelope"></i>
+									<p>anthonydo2307@gmail.com</p>
+								</a>
+								
+								<a href="tel:555-555-5555" class="contact-line"> <i class="fas fa-phone"></i>
+									<p>682.306.1796</p>
+								</a>
+								
+							</div>
+						</div>
+					</section>
+			</main>
+		
+			<footer>
+				<p>&copy; 2025 Anthony Do. All rights reserved.</p>
+			</footer>
+		</div>
+
+	<script src="script.js"></script>
 </body>
 </html>
